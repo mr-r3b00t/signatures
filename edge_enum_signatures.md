@@ -2,7 +2,7 @@
 
 Auto-generated from `edge_signatures.py` + `edge_vulns.py`. Regenerate with `python3 gen_signature_doc.py`.
 
-**45 detection signatures · 31 CVE rules · 15 honeypot-active CVEs · 13 exploit-path probes · 21 favicon hashes**
+**45 detection signatures · 33 CVE rules · 15 honeypot-active CVEs · 13 exploit-path probes · 22 favicon hashes**
 
 All detection is GET-only / unauthenticated; the tool runs dry-run unless `--authorised "<ref>"` is passed.
 
@@ -10,13 +10,13 @@ All detection is GET-only / unauthenticated; the tool runs dry-run unless `--aut
 
 | # | Product | Cat | Ports | Detection signals | Version src | Favicon (mmh3) | Confirm paths |
 |---|---|---|---|---|---|---|---|
-| 1 | Check Point Mobile Access / Connectra | vpn | 443 | cert, server, body | — | -1822098181 | `/sslvpn/Login/Login` |
+| 1 | Check Point Mobile Access / Connectra | vpn | 443 | cert, server, body | — | -1822098181, 794809961 | `/sslvpn/Login/Login` |
 | 2 | Cisco ASA / AnyConnect | vpn | 443 | cert, cookie, body | — | 350837876 | `/+CSCOE+/logon.html` |
 | 3 | Citrix NetScaler / Gateway (ADC) | vpn | 443 | cert, server, cookie, body | — | -1292923998, -1166125415, 2053741851 | `/vpn/index.html; /logon/LogonPoint/tmindex.html` |
 | 4 | F5 BIG-IP APM | vpn | 443 | cert, server, cookie, body | — | 878647854, 1888970943 | `/my.policy` |
 | 5 | Fortinet FortiGate SSL-VPN | vpn | 443,10443 | cert, cookie, body | — | — | `/remote/login` |
 | 6 | Ivanti Connect Secure / Pulse Secure | vpn | 443 | cert, cookie, body | path | — | `/dana-na/auth/url_default/welcome.cgi; /dana-na/nc/nc_gina_ver.txt` |
-| 7 | Palo Alto GlobalProtect | vpn | 443 | cert, server, body | — | — | `/global-protect/login.esp; /php/login.php` |
+| 7 | Palo Alto GlobalProtect | vpn | 443 | cert, server, body | — | -631559155 | `/global-protect/login.esp; /php/login.php` |
 | 8 | SonicWall SMA / SSL-VPN | vpn | 443,4433 | cert, server, cookie, body | — | 778117213 | `/cgi-bin/welcome` |
 | 9 | VMware Horizon / UAG | vpn | 443 | cert, body | path | -991123252 | `/portal/info.jsp` |
 | 10 | Fortinet FortiWeb (WAF) | adc | 443,8443 | cert, cookie, body | — | — | `/login.html` |
@@ -62,6 +62,8 @@ All detection is GET-only / unauthenticated; the tool runs dry-run unless `--aut
 
 | Product | CVE | Sev | Affected-version logic | Honeypot | Exploit-path probe |
 |---|---|---|---|---|---|
+| Check Point Mobile Access / Connectra | CVE-2024-24919 | crit | product-level |  | — |
+| Check Point Mobile Access / Connectra | CVE-2026-50751 | crit | product-level |  | — |
 | Citrix NetScaler / Gateway (ADC) | CVE-2025-5777 | crit | 13.1<58.32 · 14.1<43.56 · 13.0/12.1 EOL | **ACTIVE** | `/p/u/doAuthentication.do` |
 | Citrix NetScaler / Gateway (ADC) | CVE-2023-4966 | crit | 13.1<49.15 · 14.1<8.50 · 13.0<92.19 · 12.1 EOL |  | — |
 | Citrix NetScaler / Gateway (ADC) | CVE-2026-3055 | crit | product-level | **ACTIVE** | `/saml/login` |
