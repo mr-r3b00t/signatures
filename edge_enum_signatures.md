@@ -2,7 +2,7 @@
 
 Auto-generated from `edge_signatures.py` + `edge_vulns.py`. Regenerate with `python3 gen_signature_doc.py`.
 
-**45 detection signatures · 31 CVE rules · 15 honeypot-active CVEs · 13 exploit-path probes · 18 favicon hashes**
+**45 detection signatures · 31 CVE rules · 15 honeypot-active CVEs · 13 exploit-path probes · 19 favicon hashes**
 
 All detection is GET-only / unauthenticated; the tool runs dry-run unless `--authorised "<ref>"` is passed.
 
@@ -36,7 +36,7 @@ All detection is GET-only / unauthenticated; the tool runs dry-run unless `--aut
 | 24 | Microsoft WSUS | mgmt | 8530,8531,443 | server | — | — | `/ApiRemoting30/WebService.asmx; /ClientWebService/client.asmx` |
 | 25 | SolarWinds Orion / Web Help Desk | mgmt | 443,8443,8787 | cert, body | — | -1776962843 | `/Orion/Login.aspx; /helpdesk/WebObjects/Helpdesk.woa` |
 | 26 | Squid proxy | mgmt | 3128,443,8080 | server, header, www-auth, body | homepage | — | `—` |
-| 27 | Ubiquiti UniFi OS / Network | mgmt | 443,8443 | cert, cookie, body | path | — | `/status; /manage/account/login` |
+| 27 | Ubiquiti UniFi OS / Network | mgmt | 443,8443 | cert, cookie, body | path | 390404864 | `/status; /manage/account/login` |
 | 28 | VMware (vSphere / ESXi family) | mgmt | 443 | — | — | 179502801, 1274734426, 1521142546, 1724644072 | `—` |
 | 29 | VMware vCenter Server | mgmt | 443 | cert, cookie, body | path | 695042995 | `/sdk/vimServiceVersions.xml; /ui/` |
 | 30 | cPanel / WHM | mgmt | 2083,2087,2096,443 | server, cookie, body | — | -696182543 | `/login/` |
