@@ -2,7 +2,7 @@
 
 Auto-generated from `edge_signatures.py` + `edge_vulns.py`. Regenerate with `python3 gen_signature_doc.py`.
 
-**43 detection signatures · 29 CVE rules · 15 honeypot-active CVEs · 13 exploit-path probes · 12 favicon hashes**
+**45 detection signatures · 31 CVE rules · 15 honeypot-active CVEs · 13 exploit-path probes · 18 favicon hashes**
 
 All detection is GET-only / unauthenticated; the tool runs dry-run unless `--authorised "<ref>"` is passed.
 
@@ -18,7 +18,7 @@ All detection is GET-only / unauthenticated; the tool runs dry-run unless `--aut
 | 6 | Ivanti Connect Secure / Pulse Secure | vpn | 443 | cert, cookie, body | path | — | `/dana-na/auth/url_default/welcome.cgi; /dana-na/nc/nc_gina_ver.txt` |
 | 7 | Palo Alto GlobalProtect | vpn | 443 | cert, server, body | — | — | `/global-protect/login.esp; /php/login.php` |
 | 8 | SonicWall SMA / SSL-VPN | vpn | 443,4433 | cert, server, cookie, body | — | 778117213 | `/cgi-bin/welcome` |
-| 9 | VMware Horizon / UAG | vpn | 443 | cert, body | path | — | `/portal/info.jsp` |
+| 9 | VMware Horizon / UAG | vpn | 443 | cert, body | path | -991123252 | `/portal/info.jsp` |
 | 10 | Fortinet FortiWeb (WAF) | adc | 443,8443 | cert, cookie, body | — | — | `/login.html` |
 | 11 | Citrix ShareFile / Accellion / Kiteworks | mft | 443 | cert, cookie, body | — | — | `—` |
 | 12 | Cleo Harmony / VLTrader / LexiCom | mft | 443,5080,5443 | cert, server, body | — | — | `/Synchronization` |
@@ -34,25 +34,27 @@ All detection is GET-only / unauthenticated; the tool runs dry-run unless `--aut
 | 22 | Fortinet FortiSandbox | mgmt | 443 | cert, body | — | — | `—` |
 | 23 | Kubernetes API server | mgmt | 6443,443,8443 | cert | path | — | `/version; /healthz` |
 | 24 | Microsoft WSUS | mgmt | 8530,8531,443 | server | — | — | `/ApiRemoting30/WebService.asmx; /ClientWebService/client.asmx` |
-| 25 | Squid proxy | mgmt | 3128,443,8080 | server, header, www-auth, body | homepage | — | `—` |
-| 26 | Ubiquiti UniFi OS / Network | mgmt | 443,8443 | cert, cookie, body | path | — | `/status; /manage/account/login` |
-| 27 | VMware vCenter Server | mgmt | 443 | cert, cookie, body | path | — | `/sdk/vimServiceVersions.xml; /ui/` |
-| 28 | cPanel / WHM | mgmt | 2083,2087,2096,443 | server, cookie, body | — | — | `/login/` |
-| 29 | Adobe Experience Manager (AEM) | cms | 443,4502,4503 | server, cookie, body | — | — | `/libs/granite/core/content/login.html; /system/console` |
-| 30 | Drupal CMS | cms | 443,80 | cookie, header, body | header | — | `/CHANGELOG.txt; /core/CHANGELOG.txt; /user/login` |
-| 31 | WordPress | cms | 443,80 | cookie, body | homepage+path | — | `/wp-login.php; /wp-json/; /readme.html; /feed/` |
-| 32 | Apache Tomcat | app | 443,8080,8443 | server, www-auth, body | homepage+path | -297069493 | `/docs/; /manager/html` |
-| 33 | Atlassian Confluence | app | 443,8090 | cookie, header, body | homepage+path | 1163764264 | `/login.action` |
-| 34 | Atlassian Jira | app | 443,8080 | cookie, header, body | path | — | `/rest/api/2/serverInfo; /secure/Dashboard.jspa` |
-| 35 | GitLab | app | 443 | cookie, header, body | path | -1119287757, 1265477436 | `/users/sign_in; /help` |
-| 36 | Jenkins | app | 443,8080,8443 | server, header, body | header | 81586312 | `/login` |
-| 37 | Microsoft SharePoint (on-prem) | app | 443 | cookie, header, www-auth, body | header | — | `/_layouts/15/start.aspx; /_vti_bin/sites.asmx` |
-| 38 | Oracle E-Business Suite | app | 443,8000 | server, body | — | — | `/OA_HTML/AppsLogin; /OA_HTML/AppsLocalLogin.jsp` |
-| 39 | Oracle PeopleSoft (PIA) | app | 443,8000,8443 | cookie, body | homepage+path | — | `/psp/ps/?cmd=login; /psc/ps/; /PSIGW/PeopleSoftServiceListeningConnector` |
-| 40 | PaperCut MF/NG | app | 443,9192,9191 | body | homepage+path | — | `/app; /user` |
-| 41 | React Server (Next.js / RSC) | app | 443 | header, body | — | — | `—` |
-| 42 | Splunk | app | 8000,8089,443 | server, cookie, body | path | — | `/en-US/account/login; /services/server/info` |
-| 43 | Tableau Server | app | 443 | cookie, body | path | -1441956789 | `/api/3.4/serverinfo; /api/2.4/serverinfo` |
+| 25 | SolarWinds Orion / Web Help Desk | mgmt | 443,8443,8787 | cert, body | — | -1776962843 | `/Orion/Login.aspx; /helpdesk/WebObjects/Helpdesk.woa` |
+| 26 | Squid proxy | mgmt | 3128,443,8080 | server, header, www-auth, body | homepage | — | `—` |
+| 27 | Ubiquiti UniFi OS / Network | mgmt | 443,8443 | cert, cookie, body | path | — | `/status; /manage/account/login` |
+| 28 | VMware (vSphere / ESXi family) | mgmt | 443 | — | — | 179502801, 1274734426, 1521142546, 1724644072 | `—` |
+| 29 | VMware vCenter Server | mgmt | 443 | cert, cookie, body | path | 695042995 | `/sdk/vimServiceVersions.xml; /ui/` |
+| 30 | cPanel / WHM | mgmt | 2083,2087,2096,443 | server, cookie, body | — | -696182543 | `/login/` |
+| 31 | Adobe Experience Manager (AEM) | cms | 443,4502,4503 | server, cookie, body | — | — | `/libs/granite/core/content/login.html; /system/console` |
+| 32 | Drupal CMS | cms | 443,80 | cookie, header, body | header | -1610980956 | `/CHANGELOG.txt; /core/CHANGELOG.txt; /user/login` |
+| 33 | WordPress | cms | 443,80 | cookie, body | homepage+path | — | `/wp-login.php; /wp-json/; /readme.html; /feed/` |
+| 34 | Apache Tomcat | app | 443,8080,8443 | server, www-auth, body | homepage+path | -297069493 | `/docs/; /manager/html` |
+| 35 | Atlassian Confluence | app | 443,8090 | cookie, header, body | homepage+path | 1163764264 | `/login.action` |
+| 36 | Atlassian Jira | app | 443,8080 | cookie, header, body | path | — | `/rest/api/2/serverInfo; /secure/Dashboard.jspa` |
+| 37 | GitLab | app | 443 | cookie, header, body | path | -1119287757, 1265477436 | `/users/sign_in; /help` |
+| 38 | Jenkins | app | 443,8080,8443 | server, header, body | header | 81586312 | `/login` |
+| 39 | Microsoft SharePoint (on-prem) | app | 443 | cookie, header, www-auth, body | header | — | `/_layouts/15/start.aspx; /_vti_bin/sites.asmx` |
+| 40 | Oracle E-Business Suite | app | 443,8000 | server, body | — | — | `/OA_HTML/AppsLogin; /OA_HTML/AppsLocalLogin.jsp` |
+| 41 | Oracle PeopleSoft (PIA) | app | 443,8000,8443 | cookie, body | homepage+path | — | `/psp/ps/?cmd=login; /psc/ps/; /PSIGW/PeopleSoftServiceListeningConnector` |
+| 42 | PaperCut MF/NG | app | 443,9192,9191 | body | homepage+path | — | `/app; /user` |
+| 43 | React Server (Next.js / RSC) | app | 443 | header, body | — | — | `—` |
+| 44 | Splunk | app | 8000,8089,443 | server, cookie, body | path | — | `/en-US/account/login; /services/server/info` |
+| 45 | Tableau Server | app | 443 | cookie, body | path | -1441956789 | `/api/3.4/serverinfo; /api/2.4/serverinfo` |
 
 **Detection signals** — regex evidence types: `cert` (subject/issuer/SAN), `server` (Server header), `cookie` (Set-Cookie), `header` (any response header, e.g. `X-Jenkins`, `MicrosoftSharePointTeamServices`), `www-auth` (WWW-Authenticate), `body` (root HTML). Reported only at confidence ≥ 3 (single weak signals don't fire). **Version src** — where a build is read unauthenticated (`homepage` is CDN-safe).
 
@@ -78,6 +80,8 @@ All detection is GET-only / unauthenticated; the tool runs dry-run unless `--aut
 | Fortinet FortiSandbox | CVE-2026-25089 | crit | product-level | **ACTIVE** | `/api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php` |
 | Fortinet FortiSandbox | CVE-2026-39808 | high | product-level | **ACTIVE** | `/fortisandbox/job-detail/` |
 | Microsoft WSUS | CVE-2025-59287 | crit | product-level | **ACTIVE** | `/ReportingWebService/ReportingWebService.asmx` |
+| SolarWinds Orion / Web Help Desk | CVE-2024-28986 | crit | product-level |  | — |
+| SolarWinds Orion / Web Help Desk | CVE-2020-10148 | crit | product-level |  | — |
 | Ubiquiti UniFi OS / Network | CVE-2026-34910 | crit | product-level | **ACTIVE** | `/api/auth/validate-sso` |
 | cPanel / WHM | CVE-2026-41940 | crit | product-level | **ACTIVE** | `/login/` |
 | Drupal CMS | CVE-2026-9082 | crit | product-level | **ACTIVE** | `/jsonapi/node/article` |
