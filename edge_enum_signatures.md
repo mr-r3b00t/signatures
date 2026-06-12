@@ -2,7 +2,7 @@
 
 Auto-generated from `edge_signatures.py` + `edge_vulns.py`. Regenerate with `python3 gen_signature_doc.py`.
 
-**43 detection signatures · 29 CVE rules · 15 honeypot-active CVEs · 13 exploit-path probes · 10 favicon hashes**
+**43 detection signatures · 29 CVE rules · 15 honeypot-active CVEs · 13 exploit-path probes · 12 favicon hashes**
 
 All detection is GET-only / unauthenticated; the tool runs dry-run unless `--authorised "<ref>"` is passed.
 
@@ -11,7 +11,7 @@ All detection is GET-only / unauthenticated; the tool runs dry-run unless `--aut
 | # | Product | Cat | Ports | Detection signals | Version src | Favicon (mmh3) | Confirm paths |
 |---|---|---|---|---|---|---|---|
 | 1 | Check Point Mobile Access / Connectra | vpn | 443 | cert, server, body | — | -1822098181 | `/sslvpn/Login/Login` |
-| 2 | Cisco ASA / AnyConnect | vpn | 443 | cert, cookie, body | — | — | `/+CSCOE+/logon.html` |
+| 2 | Cisco ASA / AnyConnect | vpn | 443 | cert, cookie, body | — | 350837876 | `/+CSCOE+/logon.html` |
 | 3 | Citrix NetScaler / Gateway (ADC) | vpn | 443 | cert, server, cookie, body | — | -1292923998, -1166125415, 2053741851 | `/vpn/index.html; /logon/LogonPoint/tmindex.html` |
 | 4 | F5 BIG-IP APM | vpn | 443 | cert, server, cookie, body | — | 878647854, 1888970943 | `/my.policy` |
 | 5 | Fortinet FortiGate SSL-VPN | vpn | 443,10443 | cert, cookie, body | — | — | `/remote/login` |
@@ -25,7 +25,7 @@ All detection is GET-only / unauthenticated; the tool runs dry-run unless `--aut
 | 13 | Fortra GoAnywhere MFT | mft | 443,8000,8001 | cert, cookie, body | path | — | `/goanywhere/` |
 | 14 | Progress MOVEit Transfer | mft | 443 | cert, server, cookie, body | path | — | `/human.aspx; /api/v1/token` |
 | 15 | SolarWinds Serv-U | mft | 443 | cert, server, body | path | — | `/Web Client/Login.htm` |
-| 16 | Microsoft Exchange (OWA/ECP) | mail | 443 | cookie, www-auth, body | path | 1768726119 | `/owa/; /owa/auth/logon.aspx; /ecp/; /autodiscover/autodiscover.xml` |
+| 16 | Microsoft Exchange (OWA/ECP) | mail | 443 | cookie, www-auth, body | path | 442749392, 1768726119 | `/owa/; /owa/auth/logon.aspx; /ecp/; /autodiscover/autodiscover.xml` |
 | 17 | Roundcube Webmail | mail | 443 | cookie, body | homepage | — | `—` |
 | 18 | Zimbra Collaboration | mail | 443,7071 | server, cookie, body | — | — | `/zimbra/; /public/login.jsp` |
 | 19 | Ivanti EPMM / MobileIron (MDM) | mdm | 443 | cert, body | — | 1983356674 | `/mifs/login.jsp` |
@@ -42,9 +42,9 @@ All detection is GET-only / unauthenticated; the tool runs dry-run unless `--aut
 | 30 | Drupal CMS | cms | 443,80 | cookie, header, body | header | — | `/CHANGELOG.txt; /core/CHANGELOG.txt; /user/login` |
 | 31 | WordPress | cms | 443,80 | cookie, body | homepage+path | — | `/wp-login.php; /wp-json/; /readme.html; /feed/` |
 | 32 | Apache Tomcat | app | 443,8080,8443 | server, www-auth, body | homepage+path | -297069493 | `/docs/; /manager/html` |
-| 33 | Atlassian Confluence | app | 443,8090 | cookie, header, body | homepage+path | — | `/login.action` |
+| 33 | Atlassian Confluence | app | 443,8090 | cookie, header, body | homepage+path | 1163764264 | `/login.action` |
 | 34 | Atlassian Jira | app | 443,8080 | cookie, header, body | path | — | `/rest/api/2/serverInfo; /secure/Dashboard.jspa` |
-| 35 | GitLab | app | 443 | cookie, header, body | path | -1119287757 | `/users/sign_in; /help` |
+| 35 | GitLab | app | 443 | cookie, header, body | path | -1119287757, 1265477436 | `/users/sign_in; /help` |
 | 36 | Jenkins | app | 443,8080,8443 | server, header, body | header | 81586312 | `/login` |
 | 37 | Microsoft SharePoint (on-prem) | app | 443 | cookie, header, www-auth, body | header | — | `/_layouts/15/start.aspx; /_vti_bin/sites.asmx` |
 | 38 | Oracle E-Business Suite | app | 443,8000 | server, body | — | — | `/OA_HTML/AppsLogin; /OA_HTML/AppsLocalLogin.jsp` |
