@@ -2,7 +2,7 @@
 
 Auto-generated from `edge_signatures.py` + `edge_vulns.py`. Regenerate with `python3 gen_signature_doc.py`.
 
-**45 detection signatures · 31 CVE rules · 15 honeypot-active CVEs · 13 exploit-path probes · 19 favicon hashes**
+**45 detection signatures · 31 CVE rules · 15 honeypot-active CVEs · 13 exploit-path probes · 20 favicon hashes**
 
 All detection is GET-only / unauthenticated; the tool runs dry-run unless `--authorised "<ref>"` is passed.
 
@@ -22,7 +22,7 @@ All detection is GET-only / unauthenticated; the tool runs dry-run unless `--aut
 | 10 | Fortinet FortiWeb (WAF) | adc | 443,8443 | cert, cookie, body | — | — | `/login.html` |
 | 11 | Citrix ShareFile / Accellion / Kiteworks | mft | 443 | cert, cookie, body | — | — | `—` |
 | 12 | Cleo Harmony / VLTrader / LexiCom | mft | 443,5080,5443 | cert, server, body | — | — | `/Synchronization` |
-| 13 | Fortra GoAnywhere MFT | mft | 443,8000,8001 | cert, cookie, body | path | — | `/goanywhere/` |
+| 13 | Fortra GoAnywhere MFT | mft | 443,8000,8001 | cert, cookie, body | path | 1170495932 | `/goanywhere/` |
 | 14 | Progress MOVEit Transfer | mft | 443 | cert, server, cookie, body | path | — | `/human.aspx; /api/v1/token` |
 | 15 | SolarWinds Serv-U | mft | 443 | cert, server, body | path | — | `/Web Client/Login.htm` |
 | 16 | Microsoft Exchange (OWA/ECP) | mail | 443 | cookie, www-auth, body | path | 442749392, 1768726119 | `/owa/; /owa/auth/logon.aspx; /ecp/; /autodiscover/autodiscover.xml` |
